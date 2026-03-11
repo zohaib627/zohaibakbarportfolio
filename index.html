@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base target="_self">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zohaib Awan - Frontend Developer</title>
+    <meta name="description" content="Frontend Developer portfolio with expertise in HTML, CSS, and JavaScript creating responsive and user-friendly websites">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#2563eb",    // Blue
+                        secondary: "#1e293b",  // Dark blue-gray
+                        accent: "#0ea5e9",     // Light blue
+                        light: "#f8fafc"       // Light background
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom CSS for smooth transitions and animations */
+        * {
+            transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        .progress-bar {
+            height: 8px;
+            border-radius: 4px;
+            background-color: #e2e8f0;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            border-radius: 4px;
+            background-color: #2563eb;
+            transition: width 1.5s ease-in-out;
+        }
+        
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.15);
+        }
+        
+        .nav-active {
+            color: #2563eb;
+            font-weight: 600;
+        }
+        
+        /* Profile image placeholder styling */
+        .profile-img {
+            background: linear-gradient(135deg, #2563eb 0%, #0ea5e9 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 bg-light">
+    <!-- Header / Navigation -->
+    <header class="sticky top-0 z-50 bg-white shadow-sm">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo / Name -->
+                <div class="flex items-center">
+                    <a href="#home" class="text-2xl font-bold text-primary">ZA</a>
+                    <span class="ml-2 text-xl font-semibold text-secondary hidden sm:block">Zohaib Awan</span>
+                </div>
+                
+                <!-- Navigation Links -->
+                <div class="flex space-x-4 md:space-x-8">
+                    <a href="#home" class="nav-link text-gray-600 hover:text-primary" data-section="home">Home</a>
+                    <a href="#about" class="nav-link text-gray-600 hover:text-primary" data-section="about">About</a>
+                    <a href="#skills" class="nav-link text-gray-600 hover:text-primary" data-section="skills">Skills</a>
+                    <a href="#contact" class="nav-link text-gray-600 hover:text-primary" data-section="contact">Contact</a>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <button id="mobile-menu-button" class="md:hidden text-gray-600 focus:outline-none">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden py-4 border-t">
+                <div class="flex flex-col space-y-4">
+                    <a href="#home" class="nav-link text-gray-600 hover:text-primary" data-section="home">Home</a>
+                    <a href="#about" class="nav-link text-gray-600 hover:text-primary" data-section="about">About</a>
+                    <a href="#skills" class="nav-link text-gray-600 hover:text-primary" data-section="skills">Skills</a>
+                    <a href="#contact" class="nav-link text-gray-600 hover:text-primary" data-section="contact">Contact</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="py-12 md:py-20 bg-gradient-to-r from-blue-50 to-light">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row items-center">
+                <!-- Hero Content -->
+                <div class="lg:w-1/2 mb-10 lg:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold text-secondary mb-4">Zohaib Awan</h1>
+                    <h2 class="text-2xl md:text-3xl text-primary mb-6">Frontend Developer</h2>
+                    <p class="text-gray-600 text-lg mb-8 max-w-2xl">
+                        Passionate frontend developer skilled in HTML, CSS, and JavaScript, creating responsive and user-friendly websites. I enjoy turning complex problems into simple, beautiful designs.
+                    </p>
+                    <a href="#contact" class="inline-block bg-primary text-white font-medium py-3 px-8 rounded-lg shadow-md hover:bg-accent hover:shadow-lg transform hover:-translate-y-1">
+                        Contact Me
+                    </a>
+                </div>
+                
+                <!-- Profile Image Placeholder -->
+                <div class="lg:w-1/2 flex justify-center lg:justify-end">
+                    <div class="profile-img w-64 h-64 md:w-80 md:h-80 rounded-full shadow-xl">
+                        <img src="img/WhatsApp Image 2026-02-18 at 9.57.40 PM.jpeg" alt="ZA">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-secondary mb-4">About Me</h2>
+                <div class="w-20 h-1 bg-primary mx-auto"></div>
+            </div>
+            
+            <div class="max-w-3xl mx-auto">
+                <p class="text-gray-700 text-lg mb-6">
+                    I am a dedicated and passionate frontend developer with a strong foundation in web technologies. My journey in computer science began with formal education, and I continue to expand my knowledge through hands-on projects and continuous learning.
+                </p>
+                
+                <div class="bg-light p-6 rounded-lg shadow-sm mb-8">
+                    <h3 class="text-xl font-semibold text-secondary mb-4">Education</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="bg-primary text-white rounded-full p-2 mr-4 mt-1">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-800">Associate Degree in Computer Science</h4>
+                                <p class="text-gray-600">University of Central Punjab</p>
+                                <p class="text-gray-500 text-sm">Completed program with focus on software development fundamentals</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-accent text-white rounded-full p-2 mr-4 mt-1">
+                                <i class="fas fa-university"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-800">BS Computer Science (In Progress)</h4>
+                                <p class="text-gray-600">Ripah International University</p>
+                                <p class="text-gray-500 text-sm">Currently pursuing Bachelor's degree with specialization in web technologies</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <p class="text-gray-700 text-lg">
+                    My passion lies in frontend development where I can combine creativity with technical skills to build engaging user interfaces. I'm constantly exploring modern web technologies and best practices to create efficient, accessible, and visually appealing web applications.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-16 bg-gradient-to-r from-light to-blue-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-secondary mb-4">My Skills</h2>
+                <div class="w-20 h-1 bg-primary mx-auto"></div>
+                <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Here are the key technologies I work with to create modern, responsive websites</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- HTML Skill Card -->
+                <div class="skill-card bg-white p-6 rounded-lg shadow-md hover:shadow-xl">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-red-100 p-3 rounded-full mr-4">
+                            <i class="fab fa-html5 text-red-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800">HTML</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">Semantic markup, accessibility, and modern HTML5 features.</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 85%"></div>
+                    </div>
+                    <div class="flex justify-between mt-2">
+                        <span class="text-sm text-gray-500">Proficiency</span>
+                        <span class="text-sm font-medium text-primary">85%</span>
+                    </div>
+                </div>
+                
+                <!-- CSS Skill Card -->
+                <div class="skill-card bg-white p-6 rounded-lg shadow-md hover:shadow-xl">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-100 p-3 rounded-full mr-4">
+                            <i class="fab fa-css3-alt text-blue-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800">CSS</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">Responsive design, CSS Grid, Flexbox, animations, and Tailwind CSS.</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 75%"></div>
+                    </div>
+                    <div class="flex justify-between mt-2">
+                        <span class="text-sm text-gray-500">Proficiency</span>
+                        <span class="text-sm font-medium text-primary">75%</span>
+                    </div>
+                </div>
+                
+                <!-- JavaScript Skill Card -->
+                <div class="skill-card bg-white p-6 rounded-lg shadow-md hover:shadow-xl">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-yellow-100 p-3 rounded-full mr-4">
+                            <i class="fab fa-js-square text-yellow-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800">JavaScript</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">DOM manipulation, API integration, and modern frameworks.</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 60%"></div>
+                    </div>
+                    <div class="flex justify-between mt-2">
+                        <span class="text-sm text-gray-500">Proficiency</span>
+                        <span class="text-sm font-medium text-primary">60%</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Additional Skills -->
+            <div class="mt-12 max-w-2xl mx-auto">
+                <h3 class="text-2xl font-semibold text-center text-secondary mb-6">Additional Skills</h3>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <span class="bg-white px-4 py-2 rounded-full shadow-sm text-gray-700 border border-gray-200">Responsive Design</span>
+                    <span class="bg-white px-4 py-2 rounded-full shadow-sm text-gray-700 border border-gray-200">Git & GitHub</span>
+                    <span class="bg-white px-4 py-2 rounded-full shadow-sm text-gray-700 border border-gray-200">UI/UX Principles</span>
+                    <span class="bg-white px-4 py-2 rounded-full shadow-sm text-gray-700 border border-gray-200">Problem Solving</span>
+                    <span class="bg-white px-4 py-2 rounded-full shadow-sm text-gray-700 border border-gray-200">Cross-browser Compatibility</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-secondary mb-4">Get In Touch</h2>
+                <div class="w-20 h-1 bg-primary mx-auto"></div>
+                <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Feel free to reach out for collaborations, opportunities, or just to say hello!</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Contact Information -->
+                <div>
+                    <h3 class="text-2xl font-semibold text-secondary mb-6">Contact Information</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-primary text-white rounded-full p-3 mr-4">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-800">Email</h4>
+                                <p class="text-gray-600">zohaibawang@gmail.com</p>
+                                <p class="text-gray-500 text-sm mt-1">I typically respond within 24 hours</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-accent text-white rounded-full p-3 mr-4">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-800">Phone</h4>
+                                <p class="text-gray-600">+92322 8199833</p>
+                                <p class="text-gray-500 text-sm mt-1">Available Mon-Fri, 9AM-5PM</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-10">
+                        <h4 class="text-xl font-medium text-secondary mb-4">Connect with me</h4>
+                        <div class="flex space-x-4">
+                            <a href="https://wa.link/lakw8f" class="bg-gray-100 text-gray-700 p-3 rounded-full hover:bg-blue-600 hover:text-white" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="https://www.instagram.com/zohaibawan05?igsh=MXI2aGdzemtvdGR4Zg%3D%3D&utm_source=qr" class="bg-gray-100 text-gray-700 p-3 rounded-full hover:bg-pink-600 hover:text-white" target="_blank">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div>
+                    <h3 class="text-2xl font-semibold text-secondary mb-6">Send a Message</h3>
+                    
+                    <form id="contact-form" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-gray-700 font-medium mb-2">Full Name</label>
+                            <input type="text" id="name" name="name" required 
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                                placeholder="Enter your name">
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
+                            <input type="email" id="email" name="email" required 
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                                placeholder="Enter your email">
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
+                            <textarea id="message" name="message" rows="5" required 
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                                placeholder="Enter your message here..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-primary text-white font-medium py-3 px-6 rounded-lg shadow-md hover:bg-accent hover:shadow-lg">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-secondary text-white py-8">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="flex items-center">
+                        <a href="#home" class="text-2xl font-bold text-white">ZA</a>
+                        <span class="ml-2 text-xl font-semibold">Zohaib Awan</span>
+                    </div>
+                    <p class="mt-2 text-gray-300">Frontend Developer</p>
+                </div>
+                
+                <div class="mb-6 md:mb-0">
+                    <div class="flex space-x-6">
+                        <a href="#home" class="text-gray-300 hover:text-white">Home</a>
+                        <a href="#about" class="text-gray-300 hover:text-white">About</a>
+                        <a href="#skills" class="text-gray-300 hover:text-white">Skills</a>
+                        <a href="#contact" class="text-gray-300 hover:text-white">Contact</a>
+                    </div>
+                </div>
+                
+                <div>
+                    <p class="text-gray-300 text-center md:text-right">
+                        &copy; <span id="current-year">2024</span> Zohaib Awan. All rights reserved.
+                    </p>
+                    <p class="text-gray-400 text-sm mt-1 text-center md:text-right">Designed and developed with HTML, CSS, and JavaScript</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Define data at the beginning
+        const navigationItems = [
+            { "id": 1, "label": "Home", "section": "home" },
+            { "id": 2, "label": "About", "section": "about" },
+            { "id": 3, "label": "Skills", "section": "skills" },
+            { "id": 4, "label": "Contact", "section": "contact" }
+        ];
+        
+        // Form submission handling
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set current year in footer
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+            
+            // Mobile menu toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            // Close mobile menu when clicking a link
+            const mobileLinks = document.querySelectorAll('#mobile-menu .nav-link');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+            
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Update active navigation link based on scroll position
+            function updateActiveNavLink() {
+                const sections = document.querySelectorAll('section[id]');
+                const scrollPosition = window.scrollY + 100;
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.offsetHeight;
+                    const sectionId = section.getAttribute('id');
+                    
+                    if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                        // Remove active class from all links
+                        document.querySelectorAll('.nav-link').forEach(link => {
+                            link.classList.remove('nav-active');
+                        });
+                        
+                        // Add active class to current section link
+                        document.querySelectorAll(`.nav-link[data-section="${sectionId}"]`).forEach(link => {
+                            link.classList.add('nav-active');
+                        });
+                    }
+                });
+            }
+            
+            // Initial call to set active link
+            updateActiveNavLink();
+            
+            // Update active link on scroll
+            window.addEventListener('scroll', updateActiveNavLink);
+            
+            // Form submission
+            const contactForm = document.getElementById('contact-form');
+            
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get form values
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const message = document.getElementById('message').value;
+                
+                // Simple validation
+                if (!name || !email || !message) {
+                    alert('Please fill in all fields');
+                    return;
+                }
+                
+                // In a real application, you would send this data to a server
+                // For demo purposes, we'll just show a success message
+                alert(`Thank you, ${name}! Your message has been sent. I'll get back to you soon at ${email}.`);
+                
+                // Reset form
+                contactForm.reset();
+            });
+            
+            // Animate progress bars when skills section comes into view
+            function animateProgressBars() {
+                const skillsSection = document.getElementById('skills');
+                const progressBars = document.querySelectorAll('.progress-fill');
+                
+                // Check if skills section is in viewport
+                const sectionPosition = skillsSection.getBoundingClientRect();
+                const windowHeight = window.innerHeight;
+                
+                // If skills section is in viewport and progress bars haven't been animated yet
+                if (sectionPosition.top < windowHeight * 0.8 && sectionPosition.bottom > 0) {
+                    progressBars.forEach(bar => {
+                        // Get the width from the style attribute
+                        const width = bar.style.width;
+                        // Reset width to 0 and then animate to the target width
+                        bar.style.width = '0%';
+                        setTimeout(() => {
+                            bar.style.width = width;
+                        }, 100);
+                    });
+                    
+                    // Remove scroll listener after animation
+                    window.removeEventListener('scroll', animateProgressBars);
+                }
+            }
+            
+            // Listen for scroll to animate progress bars
+            window.addEventListener('scroll', animateProgressBars);
+            
+            // Trigger initial check in case skills section is already in view
+            animateProgressBars();
+        });
+    </script>
+</body>
+</html>
